@@ -10,6 +10,8 @@
 			"email" : "hussain@plestar.net"
 		}
 	],
+	"minimum-stability": "dev",
+	"require": {},
 	"support": {
         "issues": "https://github.com/hussain-badusha/magento-badusha-test/issues"
     },
