@@ -1,0 +1,24 @@
+{
+	"name" : "badusha/module-test",
+	"description" : "Badusha Test Module",
+	"homepage": "https://github.com/hussain-badusha/magento-badusha-test",
+	"type" : "magento2-module",
+	"version" : "1.0.0",
+	"license" : "proprietary",
+	"authors" : [{
+			"name" : "Hussain Badusha",
+			"email" : "hussain@plestar.net"
+		}
+	],
+	"support": {
+        "issues": "https://github.com/hussain-badusha/magento-badusha-test/issues"
+    },
+	"autoload" : {
+		"files" : [
+			"registration.php"
+		],
+		"psr-4" : {
+			"Badusha\\Test\\" : ""
+		}
+	}
+}
