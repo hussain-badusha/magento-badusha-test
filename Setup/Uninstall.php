@@ -20,7 +20,7 @@ class Uninstall implements UninstallInterface
         ) {
             $setup->startSetup();
             $connection = $setup->getConnection();
-            $connection->dropTable($connection->getTableName('badusha_test_table'));
+            $connection->dropTable('badusha_test_table');
             $setup->endSetup();
     }
 }
