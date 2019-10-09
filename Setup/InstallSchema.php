@@ -8,9 +8,9 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 	    @file_put_contents("plestarworld.txt", "installed " . time());
 		$installer = $setup;
 		$installer->startSetup();
-		if (!$installer->tableExists('badusha_test')) {
+		if (!$installer->tableExists('btesting')) {
 			$table = $installer->getConnection()->newTable(
-				$installer->getTable('badusha_test')
+				$installer->getTable('btesting')
 			)
 				->addColumn(
 					'id',
@@ -42,9 +42,9 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 			$installer->getConnection()->createTable($table);
 
 			$installer->getConnection()->addIndex(
-				$installer->getTable('badusha_test'),
+				$installer->getTable('btesting'),
 				$setup->getIdxName(
-					$installer->getTable('badusha_test'),
+					$installer->getTable('btesting'),
 					['name'],
 					\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
 				),
