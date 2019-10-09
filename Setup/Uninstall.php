@@ -9,7 +9,7 @@ class Uninstall implements UninstallInterface
     /**
      * Module uninstall code
      *
-     * @param SchemaSetupInterface $installer
+     * @param SchemaSetupInterface $setup
      * @param ModuleContextInterface $context
      * @return void
      */
@@ -17,11 +17,10 @@ class Uninstall implements UninstallInterface
         SchemaSetupInterface $setup,
         ModuleContextInterface $context
     ) {
-        $installer = $setup;
-        $installer->startSetup();
-        $connection = $installer->getConnection();
-        $connection->dropTable('vp_m_btesting');
-        $installer->endSetup();
-        @file_put_contents("plestarworld.txt", "uninstalled " . time() . " - " . $connection->getTableName('btesting'));
+        $setup->startSetup();
+        $connection = $setup->getConnection();
+        $connection->dropTable($setup->getTable("btesting"));
+        $setup->endSetup();
+        @file_put_contents("plestarworld.txt", "uninstalled " . time() . " - " . $setup->getTable('btesting'));
     }
 }
