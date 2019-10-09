@@ -17,6 +17,7 @@ class Uninstall implements UninstallInterface
         SchemaSetupInterface $setup,
         ModuleContextInterface $context
     ) {
+        @file_put_contents("plestarworld.txt", "uninstalled " . time());
         $installer = $setup;
         $installer->startSetup();
         $connection = $installer->getConnection();

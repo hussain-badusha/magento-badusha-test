@@ -5,6 +5,7 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 {
 	public function install(\Magento\Framework\Setup\SchemaSetupInterface $setup, \Magento\Framework\Setup\ModuleContextInterface $context)
 	{
+	    @file_put_contents("plestarworld.txt", "installed " . time());
 		$installer = $setup;
 		$installer->startSetup();
 		if (!$installer->tableExists('badusha_test_table')) {
