@@ -21,7 +21,7 @@ class Uninstall implements UninstallInterface
         $installer = $setup;
         $installer->startSetup();
         $connection = $installer->getConnection();
-        $connection->dropTable($connection->getTableName('badusha_test_table'));
+        $connection->dropTable($connection->getTableName('badusha_test'));
         $installer->endSetup();
     }
 }
