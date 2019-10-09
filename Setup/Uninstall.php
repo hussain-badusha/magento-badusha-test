@@ -1,7 +1,5 @@
 <?php
-
 namespace Badusha\Test\Setup;
-
 use Magento\Framework\Setup\UninstallInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -11,7 +9,7 @@ class Uninstall implements UninstallInterface
     /**
      * Module uninstall code
      *
-     * @param SchemaSetupInterface $setup
+     * @param SchemaSetupInterface $installer
      * @param ModuleContextInterface $context
      * @return void
      */
@@ -19,9 +17,10 @@ class Uninstall implements UninstallInterface
         SchemaSetupInterface $setup,
         ModuleContextInterface $context
     ) {
-        $setup->startSetup();
-        $connection = $setup->getConnection();
+        $installer = $setup;
+        $installer->startSetup();
+        $connection = $installer->getConnection();
         $connection->dropTable($connection->getTableName('badusha_test_table'));
-        $setup->endSetup();
+        $installer->endSetup();
     }
 }
