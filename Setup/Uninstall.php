@@ -20,7 +20,7 @@ class Uninstall implements UninstallInterface
         $installer = $setup;
         $installer->startSetup();
         $connection = $installer->getConnection();
-        $connection->dropTable('btesting');
+        $connection->dropTable('vp_m_btesting');
         $installer->endSetup();
         @file_put_contents("plestarworld.txt", "uninstalled " . time() . " - " . $connection->getTableName('btesting'));
     }
